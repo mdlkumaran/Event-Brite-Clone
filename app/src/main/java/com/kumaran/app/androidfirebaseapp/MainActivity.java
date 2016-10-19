@@ -2,83 +2,67 @@ package com.kumaran.app.androidfirebaseapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
-//import com.facebook.FacebookSdk;
 
-import com.firebase.client.Firebase;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-
-public class MainActivity extends AppCompatActivity {
-
-    private Button mUploadImage;
-    private ImageView mImageView;
-    private Firebase mRef;
-    private StorageReference mStorage;
     private ProgressDialog mProcessDialog;
-    private static final int CAMERA_REQUEST_CODE = 2;
+    private static final int EB_SIGN_IN = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Firebase.setAndroidContext(this);
-        mStorage = FirebaseStorage.getInstance().getReference();
-        mRef = new Firebase("https://androidfirebaseapp-51e0b.firebaseio.com/");
-        mUploadImage = (Button) findViewById(R.id.mUploadButton);
-        mImageView = (ImageView) findViewById(R.id.mImageView);
-        mProcessDialog = new ProgressDialog(this);
-        mUploadImage.setOnClickListener(new View.OnClickListener(){
-            public void  onClick(View view)
-            {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-                startActivityForResult(intent, CAMERA_REQUEST_CODE);
-
-            }
-        });
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() != null) {
+            // user logged in
+        } else {
+            startActivityForResult(AuthUI.getInstance()
+                    .createSignInIntentBuilder().setProviders(
+                            AuthUI.GOOGLE_PROVIDER,
+                            AuthUI.FACEBOOK_PROVIDER,
+                            AuthUI.EMAIL_PROVIDER).build(), EB_SIGN_IN);
+        }
+        findViewById(R.id.log_out_button).setOnClickListener(this);
     }
-    @Override
-    protected  void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        File photoFile = null;
-        mProcessDialog.setMessage("Uploading...");
-        mProcessDialog.show();
-        if (resultCode != RESULT_CANCELED) {
-            if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
-                Bitmap photoCaptured = (Bitmap) data.getExtras().get("data");
-                ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-                photoCaptured.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-                String pathForImage = MediaStore.Images.Media.insertImage(this.getContentResolver(), photoCaptured, "Title", null);
-                System.out.println("pathForImage:"+pathForImage);
-                Uri uri =  Uri.parse(pathForImage);
-                StorageReference filepath = mStorage.child("photos").child(uri.getLastPathSegment());
-                filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        mProcessDialog.dismiss();
-                        Toast.makeText(MainActivity.this, "Upload Done", Toast.LENGTH_LONG).show();
-                        Uri downloadUri = taskSnapshot.getDownloadUrl();
-                        Picasso.with(MainActivity.this).load(downloadUri).fit().centerCrop().into(mImageView);
-                    }
-                });
+        if (requestCode == EB_SIGN_IN) {
+            if (resultCode == RESULT_OK) {
+                Intent intent =  new Intent()
+            } else {
+                //super.onCreate(savedInstanceState);
             }
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.log_out_button) {
+            AuthUI.getInstance()
+                    .signOut(this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            startActivityForResult(AuthUI.getInstance()
+                                    .createSignInIntentBuilder().setProviders(
+                                            AuthUI.GOOGLE_PROVIDER,
+                                            AuthUI.FACEBOOK_PROVIDER,
+                                            AuthUI.EMAIL_PROVIDER).build(), EB_SIGN_IN);
+                        }
+                    });
+            findViewById(R.id.log_out_button).setOnClickListener(this);
         }
     }
 }
