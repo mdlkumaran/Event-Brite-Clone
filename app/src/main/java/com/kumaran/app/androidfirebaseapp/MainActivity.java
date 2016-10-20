@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == EB_SIGN_IN) {
             if (resultCode == RESULT_OK) {
-                Intent intent =  new Intent();
+                Intent intent =  new Intent(getApplicationContext(),personalize_interest.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             } else {
                 //super.onCreate(savedInstanceState);
             }
