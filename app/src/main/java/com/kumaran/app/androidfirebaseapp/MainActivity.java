@@ -2,8 +2,10 @@ package com.kumaran.app.androidfirebaseapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.view.View;
 import com.firebase.ui.auth.AuthUI;
@@ -22,6 +24,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar my_toolbar = (Toolbar)findViewById(R.id.app_custom_toolbar);
+        setSupportActionBar(my_toolbar);
+        getSupportActionBar().setTitle("");
+        my_toolbar.setBackgroundColor(Color.parseColor("#fa2929"));
+
         FirebaseAuth auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
             // user logged in

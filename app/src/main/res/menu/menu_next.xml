@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.kumaran.app.androidfirebaseapp.personalize_interest">
+
+    <item android:id="@+id/navigate_next"
+        android:title="@string/Next"
+        android:icon="@mipmap/next_arrow_black"
+        app:showAsAction="always"/>
+</menu>

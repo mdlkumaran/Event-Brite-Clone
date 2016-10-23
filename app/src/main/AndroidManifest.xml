@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kumaran.app.androidfirebaseapp">
-
+<uses-sdk android:minSdkVersion="18"
+    android:maxSdkVersion="24"
+    ></uses-sdk>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -22,7 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".personalize_interest"></activity>
+        <activity android:name=".personalize_interest" >
+
+        </activity>
+        <activity android:name=".logout"></activity>
     </application>
 
 </manifest>
