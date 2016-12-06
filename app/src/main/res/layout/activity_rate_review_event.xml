@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_rate_review_event"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#fff17a0a"
+    tools:context="com.kumaran.app.androidfirebaseapp.rate_review_event">
+
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_below="@+id/app_custom_toolbar">
+
+    <TextView
+        android:text="Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rating_event_label"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="47dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar_event"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="47dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rating_event_label"
+        />
+    <TextView
+        android:text="Reviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/review_event_label"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="47dp"
+        android:layout_below="@+id/ratingBar_event"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/review_event_label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/review_event_list_view"
+        android:divider="#fff17a0a"
+        android:dividerHeight="15.0sp"/>
+
+</RelativeLayout>
+</RelativeLayout>

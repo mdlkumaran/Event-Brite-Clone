@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content" android:descendantFocusability="blocksDescendants"
+    >
+
+    <TextView
+        android:text="Friend's EmailID: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pending_friends_label"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:text="Friend_Request_Pending_EmailID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pending_friend_request_name"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/pending_friends_label"
+        android:layout_toEndOf="@+id/pending_friends_label"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:text="Accept!!!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/accept_friend_button"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp"
+        android:layout_below="@+id/pending_friends_label"
+        android:layout_alignLeft="@+id/pending_friends_label"
+        android:layout_alignStart="@+id/pending_friends_label" />
+
+    <Button
+        android:text="Reject!!!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reject_friend_button"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_alignBaseline="@+id/accept_friend_button"
+        android:layout_alignBottom="@+id/accept_friend_button"
+        android:layout_toRightOf="@+id/accept_friend_button"
+        android:layout_toEndOf="@+id/accept_friend_button" />
+</RelativeLayout>

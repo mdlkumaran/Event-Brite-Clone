@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_tickets"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#fff17a0a"
+    tools:context="com.kumaran.app.androidfirebaseapp.Tickets">
+
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_below="@+id/app_custom_toolbar">
+
+
+    <TextView
+        android:text="Order Completed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:id="@+id/textView2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textStyle="normal|bold"
+        android:textColor="#fff17a0a"/>
+
+    <TextView
+        android:text="eventName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:id="@+id/event_name_ticket"
+        android:layout_below="@+id/textView2"
+        android:textStyle="normal|bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:text="event_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:id="@+id/event_date_ticket"
+        android:layout_below="@+id/event_name_ticket"
+        android:textStyle="normal|bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:text="Ticket_Quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:id="@+id/ticket_quantity"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/event_date_ticket"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_barcode"
+        android:src="@mipmap/barcode"
+        android:layout_below="@+id/ticket_quantity"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp" />
+
+    <TextView
+        android:text="Thanks!! Enjoy the event!!!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:id="@+id/thanks_event"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="normal|bold"
+        android:textColor="#fff17a0a"
+        android:layout_below="@+id/event_barcode"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>
+</RelativeLayout>

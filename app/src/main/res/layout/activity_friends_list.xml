@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_friends_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#fff17a0a"
+    tools:context="com.kumaran.app.androidfirebaseapp.friends_list">
+
+
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_below="@+id/app_custom_toolbar">
+
+    <Button
+        android:text="Send Friend Request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:id="@+id/friend_request_button"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/app_custom_toolbar"/>
+
+    <Button
+        android:text="View Messages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_msg_button"
+        android:layout_marginTop="50dp"
+        android:layout_alignTop="@+id/friend_request_button"
+        android:layout_centerHorizontal="true"/>
+
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_msg_button">
+
+
+    <TextView
+        android:text="Your Accepted Friends List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/your_accepted_friends_list_label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/your_accepted_friends_list_label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:layout_weight="5"
+        android:id="@+id/your_accepted_friends_list_view"
+        android:divider="#fff17a0a"
+        android:dividerHeight="15.0sp"/>
+
+    <TextView
+        android:text="Your Pending Friends List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/your_accepted_friends_list_view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/your_pending_friends_list_label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"
+        />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/your_pending_friends_list_label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:layout_weight="5"
+        android:id="@+id/your_pending_friends_list_view"
+        android:divider="#fff17a0a"
+        android:dividerHeight="15.0sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+</RelativeLayout>

@@ -9,7 +9,8 @@
         android:padding="5dp"
         android:textSize="18dp"
         android:textColor="#000000"
-        android:id="@+id/toolbar_title" />
+        android:id="@+id/toolbar_title"
+        android:background="#fff17a0a"/>
 
 
 </android.support.v7.widget.Toolbar>

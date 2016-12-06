@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_event_recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kumaran.app.androidfirebaseapp.EventRecyclerView">
+
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/toolbar"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/eventDashBoard_RecyclerView"
+        android:layout_below="@+id/app_custom_toolbar"
+        android:padding="20dp"
+        android:elevation="30dp"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

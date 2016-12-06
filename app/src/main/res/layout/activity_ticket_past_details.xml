@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ticket_past_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#fff17a0a"
+    tools:context="com.kumaran.app.androidfirebaseapp.ticket_past_details">
+
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/toolbar" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_below="@+id/app_custom_toolbar">
+
+<ListView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ticket_past_indi_list"
+    android:layout_marginTop="47dp"
+    android:layout_below="@+id/ratingBar_event"/>
+
+
+<RatingBar
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/ratingBar_event"
+    android:layout_below="@+id/review_label_text"
+    android:layout_marginTop="13dp"
+    android:layout_marginLeft="47dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Check Rating and Review of this event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rate_review_button"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ratingBar_event"/>
+
+    <EditText
+    android:hint="Enter a review here"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:inputType="textPersonName"
+    android:ems="10"
+    android:layout_marginTop="13dp"
+        android:id="@+id/review_label_text"
+        android:layout_alignLeft="@+id/rate_review_button"
+        android:layout_alignStart="@+id/rate_review_button" />
+
+    <Button
+        android:text="post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit_review_button"
+        android:layout_alignTop="@+id/review_label_text"
+        android:layout_toRightOf="@+id/review_label_text"
+        android:layout_toEndOf="@+id/review_label_text" />
+</RelativeLayout>
+</RelativeLayout>

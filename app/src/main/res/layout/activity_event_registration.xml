@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_user_information"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#fff17a0a"
+    tools:context="com.kumaran.app.androidfirebaseapp.event_registration">
+
+
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_below="@+id/app_custom_toolbar">
+
+    <TextView
+        android:text="Ticket Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:textStyle="normal|bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
+        android:id="@+id/event_ticket_price"
+        />
+
+    <TextView
+        android:text="Quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/event_ticket_price"
+        android:id="@+id/event_ticket_qty_label"
+        android:textStyle="normal|bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"/>
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/qty_number_picker"
+        android:scaleX="0.90"
+        android:scaleY="0.90"
+        android:layout_below="@+id/event_ticket_qty_label"
+        />
+
+    <TextView
+        android:text="First Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/qty_number_picker"
+        android:id="@+id/event_First_name"
+        android:textStyle="normal|bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/event_First_name"
+        android:id="@+id/event_regiter_first_name" />
+
+
+<TextView
+    android:text="Last Name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/editText_Lastname"
+    android:layout_below="@+id/event_regiter_first_name"
+    android:layout_marginTop="12dp"
+    android:textStyle="normal|bold"
+    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+    android:textColor="@android:color/white"/>
+
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:inputType="textPersonName"
+    android:ems="10"
+    android:layout_below="@+id/editText_Lastname"
+    android:id="@+id/event_register_lastname" />
+
+
+    <Button
+    android:text="REGISTER"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/registerTicketsButton"
+    android:layout_below="@+id/event_register_lastname"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="5dp"/>
+    </RelativeLayout>
+</RelativeLayout>

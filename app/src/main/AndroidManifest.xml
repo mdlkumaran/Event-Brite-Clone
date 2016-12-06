@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kumaran.app.androidfirebaseapp">
-<uses-sdk android:minSdkVersion="18"
-    android:maxSdkVersion="24"
-    ></uses-sdk>
+
+    <uses-sdk
+        android:maxSdkVersion="24"
+        android:minSdkVersion="18" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -11,23 +13,111 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
+    <uses-permission android:name="com.google.maps.android.utils.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
+        android:name=".FireApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@mipmap/eventbrite"
+        android:label="EventBrite"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/customTheme">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".personalize_interest" >
+        <activity
+            android:name=".personalize_interest"
+            android:screenOrientation="portrait" />
+        <activity android:name=".logout" />
+        <activity android:name=".personalize_imagebutton_list" />
+        <activity
+            android:name=".location_selection"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EventRecyclerView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".event_description"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".customsearch_eventsList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UserProfile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Tickets"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustomSearchEventList_cardLayout"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".event_registration"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ticket_future_details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".event_list_you_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ticket_past_details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ticket_today_details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".friends_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SendFriendRequest"
+            android:screenOrientation="portrait" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
 
-        </activity>
-        <activity android:name=".logout"></activity>
+        <activity
+            android:name=".HeatMapsActivity"
+            android:label="@string/title_activity_heat_maps"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".messagetofriendeventlist"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view_msg_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".rate_review_event"
+            android:screenOrientation="portrait" />
+        <activity android:name=".viewImageEvent"></activity>
     </application>
 
 </manifest>

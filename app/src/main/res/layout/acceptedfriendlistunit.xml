@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent" android:layout_height="match_parent" android:descendantFocusability="blocksDescendants"
+    >
+
+<TextView
+    android:text="Friend's EmailID: "
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/accepted_friends_label"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="15dp"
+    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+    android:textColor="@android:color/white"
+    android:textStyle="normal|bold"/>
+
+<TextView
+    android:text=""
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/accepted_friend_request_name"
+    android:layout_alignParentTop="true"
+    android:layout_toRightOf="@+id/accepted_friends_label"
+    android:layout_toEndOf="@+id/accepted_friends_label"
+    android:layout_marginTop="15dp"
+    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+    android:textColor="@android:color/white"
+    android:textStyle="normal|bold"/>
+
+<Button
+    android:text="Send Message"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/send_message_friend_button"
+    android:layout_marginTop="16dp"
+    android:layout_marginLeft="43dp"
+    android:layout_marginStart="43dp"
+    android:layout_below="@+id/accepted_friends_label"
+    android:layout_alignLeft="@+id/accepted_friends_label"
+    android:layout_alignStart="@+id/accepted_friends_label" />
+
+</RelativeLayout>

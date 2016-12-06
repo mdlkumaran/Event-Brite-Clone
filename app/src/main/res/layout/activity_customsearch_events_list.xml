@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_customsearch_events_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#fff17a0a"
+    tools:context="com.kumaran.app.androidfirebaseapp.customsearch_eventsList">
+
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_below="@+id/app_custom_toolbar">
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="120dp"
+        android:id="@+id/category_customRadioGroup"
+        >
+
+        <RadioButton
+            android:text="Free Events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/free_event_radioButton"
+            android:onClick="radioButtonClick"
+            android:checked="false"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="#fff17a0a"/>
+
+        <RadioButton
+            android:text="Paid Events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/paid_event_radioButton"
+            android:onClick="radioButtonClick"
+            android:checked="false"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="#fff17a0a"/>
+
+
+    </RadioGroup>
+    </RelativeLayout>
+</LinearLayout>

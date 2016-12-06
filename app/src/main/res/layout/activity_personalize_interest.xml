@@ -6,34 +6,31 @@
     android:layout_height="match_parent"
     tools:context="com.kumaran.app.androidfirebaseapp.personalize_interest">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/app_custom_toolbar"/>
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/toolbar" />
 
     <TextView
-        android:text="Choose your favourite topics for a more personalized experience"
-        android:gravity="center"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_below="@+id/app_custom_toolbar"
         android:layout_centerHorizontal="true"
-        android:id="@+id/textView"
-        android:layout_height="100dp" />
-
-    <ScrollView
+        android:gravity="center"
+        android:text="Choose your favourite topics for a more personalized experience"
+        android:textSize="18sp" />
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/personalize_image_scrollview"
         android:layout_below="@+id/textView">
+        <ListView
+            android:id="@+id/lv_pInterests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fastScrollEnabled="true"
+            android:scrollbarStyle="outsideInset"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.kumaran.app.androidfirebaseapp.ExpandableHeightGridView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ExpandableGridview">
-            </com.kumaran.app.androidfirebaseapp.ExpandableHeightGridView>
-        </RelativeLayout>
-    </ScrollView>
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_user_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#fff17a0a"
+    tools:context="com.kumaran.app.androidfirebaseapp.UserProfile">
+
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_below="@+id/app_custom_toolbar">
+
+    <TextView
+        android:text="Username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="15dp"
+        android:id="@+id/userprofile_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"/>
+
+    <TextView
+        android:text="Future Tickets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_below="@+id/userprofile_name"
+        android:id="@+id/future_tic_Label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/future_tic_Label"
+        android:id="@+id/tickets_future_list"
+        android:divider="#fff17a0a"
+        android:dividerHeight="15.0sp"/>
+
+    <TextView
+        android:text="Today Tickets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_below="@+id/tickets_future_list"
+        android:id="@+id/today_tic_Label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/today_tic_Label"
+        android:id="@+id/tickets_today_list"
+        android:divider="#fff17a0a"
+        android:dividerHeight="15.0sp"/>
+
+    <TextView
+        android:text="Past Tickets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_below="@+id/tickets_today_list"
+        android:id="@+id/past_tic_Label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/past_tic_Label"
+        android:id="@+id/tickets_past_list"
+        android:divider="#fff17a0a"
+        android:dividerHeight="15.0sp"/>
+    </RelativeLayout>
+</RelativeLayout>

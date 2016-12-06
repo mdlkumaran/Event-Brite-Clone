@@ -1,0 +1,96 @@
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#fff17a0a">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_maps"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/black"
+        tools:context="com.kumaran.app.androidfirebaseapp.event_description">
+
+        <include
+            android:id="@+id/app_custom_toolbar"
+            layout="@layout/toolbar" />
+
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/event_image_desc"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:src="@drawable/sample_1"
+            />
+
+        <TextView
+            android:text="Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_date_desc"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/white"
+            android:textStyle="normal|bold"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/event_name_desc"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/white"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventDescription_desc"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/white"
+            android:textStyle="normal|bold"
+            android:layout_margin="10dp"/>/>
+        <TextView
+            android:text="event host"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_host"
+            android:layout_below="@+id/category_name_text"
+            android:layout_alignParentLeft="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/white"
+            android:textStyle="normal|bold"
+            android:layout_margin="10dp"/>/>
+
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.kumaran.app.androidfirebaseapp.MapFragment"
+            android:id="@+id/fragment_map"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="Register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_register_desc"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+
+    </LinearLayout>
+
+</ScrollView>

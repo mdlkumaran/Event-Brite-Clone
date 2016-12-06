@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ticket_today_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#fff17a0a"
+    tools:context="com.kumaran.app.androidfirebaseapp.ticket_today_details">
+
+
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_below="@+id/app_custom_toolbar">
+
+    <Button
+        android:text="Capture Image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/camera_button" />
+
+    <Button
+        android:text="View Images"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/camera_button"
+        android:id="@+id/image_view_button" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_barcode"
+            android:src="@mipmap/barcode"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/image_view_button" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ticket_future_indi_list"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/event_barcode"
+        android:divider="#fff17a0a"
+        android:dividerHeight="15.0sp"/>
+
+</RelativeLayout>
+</RelativeLayout>

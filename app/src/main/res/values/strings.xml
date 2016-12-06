@@ -3,4 +3,18 @@
     <string name="facebook_application_id" translatable="false">135168690283763</string>
     <string name="Next">Next</string>
     <item name="toolbar_title" type="id">tootbar_title</item>
+    <string name="title_activity_location_selection">location_selection</string>
+    <string-array name="usStatesArr">
+        <item>New York, New York</item>
+        <item>Los Angeles, California</item>
+        <item>Chicago, Illinois</item>
+        <item>Baltimore, Maryland</item>
+        <item>Seattle, Washington</item>
+    </string-array>
+    <string name="title_activity_heat_maps">Map</string>
+    <string name="title_activity_maps_test">Map</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_name">menu_name</string>
 </resources>

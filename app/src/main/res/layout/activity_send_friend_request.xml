@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_send_friend_request"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#fff17a0a"
+    tools:context="com.kumaran.app.androidfirebaseapp.SendFriendRequest">
+
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_below="@+id/app_custom_toolbar">
+
+    <TextView
+        android:text="Enter Friends Email ID to send Friend request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="54dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="58dp"
+        android:id="@+id/friend_email_label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:layout_marginLeft="54dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="18dp"
+        android:id="@+id/friend_email_ID_edit_text"
+        android:layout_below="@+id/friend_email_label"
+        />
+
+    <Button
+        android:text="Send Friend Request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:id="@+id/send_friend_request_button"
+        android:layout_below="@+id/friend_email_ID_edit_text"
+        android:layout_alignRight="@+id/friend_email_ID_edit_text"
+        android:layout_alignEnd="@+id/friend_email_ID_edit_text"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp" />
+
+</RelativeLayout>
+
+</RelativeLayout>
